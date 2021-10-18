@@ -11,6 +11,7 @@ process_name = wiki_to_process
 
 c = mqtt.Client()
 c.connect(broker_host, 1883, 60)
+c.loop_start()
 
 url = 'https://stream.wikimedia.org/v2/stream/recentchange'
 for event in EventSource(url):
